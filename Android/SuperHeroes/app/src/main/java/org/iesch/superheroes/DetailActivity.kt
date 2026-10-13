@@ -1,0 +1,45 @@
+package org.iesch.superheroes
+
+import android.os.Bundle
+import android.widget.RatingBar
+import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import org.iesch.superheroes.databinding.ActivityDetailBinding
+import org.iesch.superheroes.databinding.ActivityMainBinding
+
+class DetailActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityDetailBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+
+        binding = ActivityDetailBinding.inflate(layoutInflater)
+
+        setContentView(binding.root)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+
+        // Recibir los datos del MainActivity
+        val bundle = intent.extras!!
+
+        val superHeroName = bundle.getString("superHeroName") ?: "No hay nombre"
+        val alterEgo = bundle.getString("alterEgo") ?: "No hay alter ego"
+        val bio = bundle.getString("bio") ?: "No hay bio"
+        val power = bundle.getFloat("power")
+
+        // Rellenar los campos con los valores recibidos
+        binding.heroNameTv.text = superHeroName
+        binding.alterEgoResult.text = alterEgo
+        binding.bioResult.text = bio
+        binding.ratingBarResult.rating = power
+
+    }
+}
