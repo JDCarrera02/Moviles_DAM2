@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">examen1JuanCarrera</string>
+
+    <!-- Primera pantalla -->
+    <string name="intro_titulo">ESCAPE LABORATORY</string>
+    <string name="intro_subtitulo">Supera las tres pruebas de seguridad informatica y consigue escapar del laboratorio</string>
+    <string name="intro_texto_boton">Comenzar</string>
+
+    <!-- Pantalla de preguntas -->
+    <string name="preg_progreso_texto">Prueba %1$d / %2$d</string>
+    <string name="texto_boton">Comprobar</string>
+
+    <!-- Apartado de preguntas (enunciados)-->
+    <string-array name="preguntas">
+        <item>Encuentras un ordenador bloqueado. ¿Qué protocolo utilizarías para acceder de forma segura a una página web?</item>
+        <item>Una puerta tiene un teclado numérico. ¿Qué contraseña sería más segura?</item>
+        <item>Necesitas enviar información confidencial. ¿Qué opción es más adecuada?</item>
+    </string-array>
+
+    <!-- Mensajes Toast -->
+    <string name="toast_no_opciones">Selecciona una opcion</string>
+
+    <!-- Apartado de opciones -->
+    <string-array name="opciones_a">
+        <item>FTP</item>
+        <item>123456</item>
+        <item>Enviarla sin protección</item>
+    </string-array>
+
+    <string-array name="opciones_b">
+        <item>HTTP</item>
+        <item>111111</item>
+        <item>Utilizar cifrado</item>
+    </string-array>
+
+    <string-array name="opciones_c">
+        <item>HTTPS</item>
+        <item>01012006</item>
+        <item>Publicarla en redes sociales</item>
+    </string-array>
+
+    <string-array name="opciones_d">
+        <item>Telnet</item>
+        <item>T7#kP9!x</item>
+        <item>Utilizar una contraseña sencilla</item>
+    </string-array>
+
+    <!-- Respuestas correctas -->
+    <string-array name="corrrectas">
+        <item>HTTPS</item>
+        <item>T7#kP9!x</item>
+        <item>Utilizar cifrado</item>
+    </string-array>
+
+    <!-- Pantalla de resultados -->
+
+</resources>
