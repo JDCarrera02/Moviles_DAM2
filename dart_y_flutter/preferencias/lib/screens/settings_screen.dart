@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:preferencias/config/preferencias.dart';
 
 class SettingsScreen extends StatefulWidget {
    
@@ -9,11 +10,12 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-
+  /*
   bool permisoUbicacion = false;
   bool permisoCamara = false;
   bool temaOscuro = false;
   String nombre = "";
+  */
 
   @override
   Widget build(BuildContext context) {
@@ -23,29 +25,29 @@ class _SettingsScreenState extends State<SettingsScreen> {
       ),
       body: Column(
         children: [
-          CheckboxListTile.adaptive(
+          SwitchListTile.adaptive(
             title: Text('Permiso de ubicacion'),
-            value: permisoUbicacion, 
+            value: Preferencias.permisoUbicacion, 
             onChanged: (value) {
-              permisoUbicacion = value!;
+              Preferencias.ubicacion = value;
 
               setState(() {});
             },),
 
-            CheckboxListTile.adaptive(
+            SwitchListTile.adaptive(
             title: Text('Permiso de camara'),
-            value: permisoCamara, 
+            value: Preferencias.permisoCamara, 
             onChanged: (value) {
-              permisoCamara = value!;
+              Preferencias.camara = value;
 
               setState(() {});
             },),
 
-            CheckboxListTile.adaptive(
+            SwitchListTile.adaptive(
             title: Text('Tema Dark'),
-            value: temaOscuro, 
+            value: Preferencias.darkMode, 
             onChanged: (value) {
-              temaOscuro = value!;
+              Preferencias.isDarkMode = value;
 
               setState(() {});
             },),
@@ -54,13 +56,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: TextFormField(
-                initialValue: nombre,
+                initialValue: Preferencias.nombre,
                 decoration: InputDecoration(
                   label: Text('Nombre'),
                   helperText: 'Nombre de usuario'
                 ),
                 onChanged: (value) {
-                  nombre = value;
+                  Preferencias.cambiarNombre = value;
                 },
               ),
             )
