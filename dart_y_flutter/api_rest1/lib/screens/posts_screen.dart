@@ -54,12 +54,32 @@ class _PostsScreenState extends State<PostsScreen> {
         child: ListView.builder(
           itemCount: listaPost?.length,
           itemBuilder: (context, index) {
-            return Column(
-              crossAxisAlignment: .start,
-              children: [
-                Text(listaPost![index].title), 
-                Text(listaPost![index].body!), 
-              ]
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Container(
+                    height: 50,
+                    width: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: .circular(12), 
+                      color: Colors.lightBlueAccent[100]
+                    ),
+                  ),
+                  SizedBox(
+                    width: 16,
+                  ),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: .start,
+                      children: [
+                        Text(listaPost![index].title, maxLines: 2, overflow: .ellipsis, style: TextStyle(fontSize: 24, ),), 
+                        Text(listaPost![index].body!, maxLines: 3, overflow: .ellipsis,), 
+                      ]
+                    ),
+                  ),
+                ],
+              ),
             );
           },
         )

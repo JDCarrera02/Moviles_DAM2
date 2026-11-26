@@ -1,4 +1,5 @@
-import 'package:api_rest1/screens/posts_screen.dart';
+// import 'package:api_rest1/screens/posts_screen.dart';
+import 'package:api_rest1/screens/users_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Api REST APP',
       debugShowCheckedModeBanner: false,
-      home: PostsScreen()
+      home: UsersScreen()
     );
   }
 }
